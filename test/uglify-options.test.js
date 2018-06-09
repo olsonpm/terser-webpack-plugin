@@ -185,4 +185,31 @@ describe('when applied with uglify-es options', () => {
       }
     });
   });
+
+  it('disable inline optimization by default (have a lot of problems)', () => {
+    const compiler = createCompiler({
+      entry: `${__dirname}/fixtures/inline-optimization.js`,
+      output: {
+        path: `${__dirname}/dist-inline-optimization`,
+        filename: '[name].js',
+        chunkFilename: '[id].[name].js',
+      },
+    });
+
+    new UglifyJsPlugin().apply(compiler);
+
+    return compile(compiler).then((stats) => {
+      const errors = stats.compilation.errors.map(cleanErrorStack);
+      const warnings = stats.compilation.warnings.map(cleanErrorStack);
+
+      expect(errors).toMatchSnapshot('errors');
+      expect(warnings).toMatchSnapshot('warnings');
+
+      for (const file in stats.compilation.assets) {
+        if (Object.prototype.hasOwnProperty.call(stats.compilation.assets, file)) {
+          expect(stats.compilation.assets[file].source()).toMatchSnapshot(file);
+        }
+      }
+    });
+  });
 });
