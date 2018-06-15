@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import { PluginEnvironment } from './helpers';
 
 describe('when applied with extract option set to a single file', () => {
@@ -10,8 +10,8 @@ describe('when applied with extract option set to a single file', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
-      uglifyOptions: {
+    const plugin = new TerserPlugin({
+      terserOptions: {
         output: {
           comments: 'all',
         },

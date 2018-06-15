@@ -10,18 +10,18 @@ import ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers';
 import validateOptions from 'schema-utils';
 import serialize from 'serialize-javascript';
 import schema from './options.json';
-import Uglify from './uglify';
-import versions from './uglify/versions';
+import Tersify from './tersify';
+import versions from './tersify/versions';
 import utils from './utils';
 
 const warningRegex = /\[.+:([0-9]+),([0-9]+)\]/;
 
-class UglifyJsPlugin {
+class TerserPlugin {
   constructor(options = {}) {
-    validateOptions(schema, options, 'UglifyJs Plugin');
+    validateOptions(schema, options, 'Terser Plugin');
 
     const {
-      uglifyOptions = {},
+      terserOptions = {},
       test = /\.js(\?.*)?$/i,
       warningsFilter = () => true,
       extractComments = false,
@@ -41,11 +41,11 @@ class UglifyJsPlugin {
       parallel,
       include,
       exclude,
-      uglifyOptions: {
+      terserOptions: {
         output: {
           comments: extractComments ? false : /^\**!|@preserve|@license|@cc_on/,
         },
-        ...uglifyOptions,
+        ...terserOptions,
       },
     };
   }
@@ -66,13 +66,13 @@ class UglifyJsPlugin {
         column: err.col,
       });
       if (original && original.source) {
-        return new Error(`${file} from UglifyJs\n${err.message} [${requestShortener.shorten(original.source)}:${original.line},${original.column}][${file}:${err.line},${err.col}]`);
+        return new Error(`${file} from Terser\n${err.message} [${requestShortener.shorten(original.source)}:${original.line},${original.column}][${file}:${err.line},${err.col}]`);
       }
-      return new Error(`${file} from UglifyJs\n${err.message} [${file}:${err.line},${err.col}]`);
+      return new Error(`${file} from Terser\n${err.message} [${file}:${err.line},${err.col}]`);
     } else if (err.stack) {
-      return new Error(`${file} from UglifyJs\n${err.stack}`);
+      return new Error(`${file} from Terser\n${err.stack}`);
     }
-    return new Error(`${file} from UglifyJs\n${err.message}`);
+    return new Error(`${file} from Terser\n${err.message}`);
   }
 
   static buildWarning(warning, file, sourceMap, warningsFilter, requestShortener) {
@@ -110,7 +110,7 @@ class UglifyJsPlugin {
     };
 
     const optimizeFn = (compilation, chunks, callback) => {
-      const uglify = new Uglify({
+      const tersify = new Tersify({
         cache: this.options.cache,
         parallel: this.options.parallel,
       });
@@ -164,14 +164,14 @@ class UglifyJsPlugin {
               inputSourceMap,
               commentsFile,
               extractComments: this.options.extractComments,
-              uglifyOptions: this.options.uglifyOptions,
+              terserOptions: this.options.terserOptions,
             };
 
             if (this.options.cache) {
               task.cacheKey = serialize({
-                'uglify-es': versions.uglify,
-                'uglifyjs-webpack-plugin': versions.plugin,
-                'uglifyjs-webpack-plugin-options': this.options,
+                terser: versions.terser,
+                'terser-webpack-plugin': versions.plugin,
+                'terser-webpack-plugin-options': this.options,
                 path: compiler.outputPath ? `${compiler.outputPath}/${file}` : file,
                 hash: crypto.createHash('md4').update(input).digest('hex'),
               });
@@ -180,17 +180,17 @@ class UglifyJsPlugin {
             tasks.push(task);
           } catch (error) {
             compilation.errors.push(
-              UglifyJsPlugin.buildError(
+              TerserPlugin.buildError(
                 error,
                 file,
-                UglifyJsPlugin.buildSourceMap(inputSourceMap),
+                TerserPlugin.buildSourceMap(inputSourceMap),
                 requestShortener,
               ),
             );
           }
         });
 
-      uglify.runTasks(tasks, (tasksError, results) => {
+      tersify.runTasks(tasks, (tasksError, results) => {
         if (tasksError) {
           compilation.errors.push(tasksError);
           return;
@@ -203,14 +203,14 @@ class UglifyJsPlugin {
           let sourceMap = null;
 
           if (error || (warnings && warnings.length > 0)) {
-            sourceMap = UglifyJsPlugin.buildSourceMap(inputSourceMap);
+            sourceMap = TerserPlugin.buildSourceMap(inputSourceMap);
           }
 
           // Handling results
           // Error case: add errors, and go to next file
           if (error) {
             compilation.errors.push(
-              UglifyJsPlugin.buildError(
+              TerserPlugin.buildError(
                 error,
                 file,
                 sourceMap,
@@ -273,7 +273,7 @@ class UglifyJsPlugin {
           // Handling warnings
           if (warnings && warnings.length > 0) {
             warnings.forEach((warning) => {
-              const builtWarning = UglifyJsPlugin.buildWarning(
+              const builtWarning = TerserPlugin.buildWarning(
                 warning,
                 file,
                 sourceMap,
@@ -288,14 +288,14 @@ class UglifyJsPlugin {
           }
         });
 
-        uglify.exit();
+        tersify.exit();
 
         callback();
       });
     };
 
     if (compiler.hooks) {
-      const plugin = { name: 'UglifyJSPlugin' };
+      const plugin = { name: 'TerserPlugin' };
 
       compiler.hooks.compilation.tap(plugin, (compilation) => {
         if (this.options.sourceMap) {
@@ -316,4 +316,4 @@ class UglifyJsPlugin {
   }
 }
 
-export default UglifyJsPlugin;
+export default TerserPlugin;

@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
@@ -21,7 +21,7 @@ describe('when applied with test option', () => {
       },
     });
 
-    new UglifyJsPlugin().apply(compiler);
+    new TerserPlugin().apply(compiler);
 
     return compile(compiler).then((stats) => {
       const errors = stats.compilation.errors.map(cleanErrorStack);

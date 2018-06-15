@@ -2,9 +2,9 @@
 
 exports[`when applied with invalid options matches snapshot: errors 1`] = `
 Array [
-  "Error: main.0c220ec66316af2c1b24.js from UglifyJs
+  "Error: main.0c220ec66316af2c1b24.js from Terser
 DefaultsError: \`invalid-option\` is not a supported option",
-  "Error: manifest.d6857f782c13a99b5917.js from UglifyJs
+  "Error: manifest.d6857f782c13a99b5917.js from Terser
 DefaultsError: \`invalid-option\` is not a supported option",
 ]
 `;
@@ -136,14 +136,14 @@ exports[`when applied with invalid options matches snapshot: manifest.d6857f782c
 exports[`when applied with invalid options matches snapshot: warnings 1`] = `Array []`;
 
 exports[`when applied with invalid options throws validation errors 1`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
 options['doesntExist'] is an invalid additional property
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 2`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
 options.cache should be boolean
 options.cache should be string
@@ -152,7 +152,7 @@ options.cache should match exactly one schema in oneOf
 `;
 
 exports[`when applied with invalid options throws validation errors 3`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
 options.parallel should be boolean
 options.parallel should be integer
@@ -161,7 +161,7 @@ options.parallel should match exactly one schema in oneOf
 `;
 
 exports[`when applied with invalid options throws validation errors 4`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
 options.parallel should be boolean
 options.parallel should be integer
@@ -170,57 +170,57 @@ options.parallel should match exactly one schema in oneOf
 `;
 
 exports[`when applied with invalid options throws validation errors 5`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
 options.sourceMap should be boolean
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 6`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions should be object
+options.terserOptions should be object
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 7`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ie8 should be boolean
+options.terserOptions.ie8 should be boolean
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 8`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ecma should be integer
+options.terserOptions.ecma should be integer
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 9`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ecma should be integer
+options.terserOptions.ecma should be integer
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 10`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ecma should be integer
+options.terserOptions.ecma should be integer
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 11`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ecma should be >= 5
+options.terserOptions.ecma should be >= 5
 "
 `;
 
 exports[`when applied with invalid options throws validation errors 12`] = `
-"UglifyJs Plugin Invalid Options
+"Terser Plugin Invalid Options
 
-options.uglifyOptions.ecma should be <= 8
+options.terserOptions.ecma should be <= 8
 "
 `;

@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   cleanErrorStack,
@@ -9,8 +9,8 @@ import {
 describe('when applied with invalid options', () => {
   it('matches snapshot', () => {
     const compiler = createCompiler();
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         output: {
           'invalid-option': true,
         },
@@ -35,101 +35,101 @@ describe('when applied with invalid options', () => {
   it('throws validation errors', () => {
     /* eslint-disable no-new */
     expect(() => {
-      new UglifyJsPlugin({ test: /foo/ });
+      new TerserPlugin({ test: /foo/ });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ doesntExist: true });
+      new TerserPlugin({ doesntExist: true });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ cache: true });
+      new TerserPlugin({ cache: true });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ cache: 'path/to/cache/directory' });
+      new TerserPlugin({ cache: 'path/to/cache/directory' });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ cache: {} });
+      new TerserPlugin({ cache: {} });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ parallel: true });
+      new TerserPlugin({ parallel: true });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ parallel: 2 });
+      new TerserPlugin({ parallel: 2 });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ parallel: '2' });
+      new TerserPlugin({ parallel: '2' });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ parallel: {} });
+      new TerserPlugin({ parallel: {} });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ sourceMap: true });
+      new TerserPlugin({ sourceMap: true });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ sourceMap: 'true' });
+      new TerserPlugin({ sourceMap: 'true' });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: null });
+      new TerserPlugin({ terserOptions: null });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ie8: false } });
+      new TerserPlugin({ terserOptions: { ie8: false } });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ie8: true } });
+      new TerserPlugin({ terserOptions: { ie8: true } });
     }).not.toThrow('Validation Error');
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ie8: 'false' } });
+      new TerserPlugin({ terserOptions: { ie8: 'false' } });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { emca: 5 } });
+      new TerserPlugin({ terserOptions: { emca: 5 } });
     }).not.toThrow();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { emca: 8 } });
+      new TerserPlugin({ terserOptions: { emca: 8 } });
     }).not.toThrow();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ecma: 7.5 } });
+      new TerserPlugin({ terserOptions: { ecma: 7.5 } });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ecma: true } });
+      new TerserPlugin({ terserOptions: { ecma: true } });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ecma: '5' } });
+      new TerserPlugin({ terserOptions: { ecma: '5' } });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ecma: 3 } });
+      new TerserPlugin({ terserOptions: { ecma: 3 } });
     }).toThrowErrorMatchingSnapshot();
 
     expect(() => {
-      new UglifyJsPlugin({ uglifyOptions: { ecma: 10 } });
+      new TerserPlugin({ terserOptions: { ecma: 10 } });
     }).toThrowErrorMatchingSnapshot();
   });
 
-  it('outputs uglify errors', () => {
+  it('outputs terser errors', () => {
     const pluginEnvironment = new PluginEnvironment();
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
-      uglifyOptions: {
+    const plugin = new TerserPlugin({
+      terserOptions: {
         output: {
           'invalid-option': true,
         },
@@ -155,7 +155,7 @@ describe('when applied with invalid options', () => {
     }], () => {
       expect(compilation.errors.length).toBe(1);
       expect(compilation.errors[0]).toBeInstanceOf(Error);
-      expect(compilation.errors[0].message).toEqual(expect.stringContaining('from UglifyJs'));
+      expect(compilation.errors[0].message).toEqual(expect.stringContaining('from Terser'));
     });
   });
 });

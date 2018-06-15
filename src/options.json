@@ -21,7 +21,7 @@
     "sourceMap": {
       "type": "boolean"
     },
-    "uglifyOptions": {
+    "terserOptions": {
       "additionalProperties": true,
       "type": "object",
       "properties": {
@@ -65,4 +65,3 @@
   },
   "additionalProperties": false
 }
-

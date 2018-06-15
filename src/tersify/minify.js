@@ -1,9 +1,9 @@
 /* eslint-disable
   arrow-body-style
 */
-import uglify from 'uglify-es';
+import terser from 'terser';
 
-const buildUglifyOptions = ({
+const buildTerserOptions = ({
   ecma,
   warnings,
   parse = {},
@@ -41,9 +41,9 @@ const buildUglifyOptions = ({
   safari10,
 });
 
-const buildComments = (options, uglifyOptions, extractedComments) => {
+const buildComments = (options, terserOptions, extractedComments) => {
   const condition = {};
-  const commentsOpts = uglifyOptions.output.comments;
+  const commentsOpts = terserOptions.output.comments;
 
   // /^\**!|@preserve|@license|@cc_on/
   if (typeof options.extractComments === 'boolean') {
@@ -127,12 +127,12 @@ const buildComments = (options, uglifyOptions, extractedComments) => {
 
 const minify = (options) => {
   const { file, input, inputSourceMap, extractComments } = options;
-  // Copy uglify options
-  const uglifyOptions = buildUglifyOptions(options.uglifyOptions);
+  // Copy terser options
+  const terserOptions = buildTerserOptions(options.terserOptions);
 
   // Add source map data
   if (inputSourceMap) {
-    uglifyOptions.sourceMap = {
+    terserOptions.sourceMap = {
       content: inputSourceMap,
     };
   }
@@ -140,16 +140,16 @@ const minify = (options) => {
   const extractedComments = [];
 
   if (extractComments) {
-    uglifyOptions.output.comments = buildComments(
+    terserOptions.output.comments = buildComments(
       options,
-      uglifyOptions,
+      terserOptions,
       extractedComments,
     );
   }
 
-  const { error, map, code, warnings } = uglify.minify(
+  const { error, map, code, warnings } = terser.minify(
     { [file]: input },
-    uglifyOptions,
+    terserOptions,
   );
 
   return { error, map, code, warnings, extractedComments };

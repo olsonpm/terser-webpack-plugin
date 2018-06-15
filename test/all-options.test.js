@@ -1,5 +1,5 @@
 import { SourceMapSource } from 'webpack-sources';
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   cleanErrorStack,
@@ -16,7 +16,7 @@ describe('when applied with all options', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       sourceMap: true,
       extractComments: {
         condition: 'should be extracted',
@@ -27,7 +27,7 @@ describe('when applied with all options', () => {
           return `License information can be found in ${licenseFile}`;
         },
       },
-      uglifyOptions: {
+      terserOptions: {
         warnings: true,
         mangle: false,
         output: {
@@ -41,9 +41,9 @@ describe('when applied with all options', () => {
 
   it('matches snapshot', () => {
     const compiler = createCompiler();
-    new UglifyJsPlugin({
+    new TerserPlugin({
       sourceMap: true,
-      uglifyOptions: {
+      terserOptions: {
         mangle: false,
         output: {
           beautify: true,
@@ -285,10 +285,10 @@ describe('when applied with all options', () => {
               const compilerEnv = pluginEnvironment.getEnvironmentStub();
               compilerEnv.context = '';
 
-              const plugin = new UglifyJsPlugin({
+              const plugin = new TerserPlugin({
                 warningsFilter: () => true,
                 sourceMap: true,
-                uglifyOptions: {
+                terserOptions: {
                   warnings: true,
                   mangle: false,
                   output: {
@@ -338,10 +338,10 @@ describe('when applied with all options', () => {
               const compilerEnv = pluginEnvironment.getEnvironmentStub();
               compilerEnv.context = '';
 
-              const plugin = new UglifyJsPlugin({
+              const plugin = new TerserPlugin({
                 warningsFilter: () => false,
                 sourceMap: true,
-                uglifyOptions: {
+                terserOptions: {
                   warnings: true,
                   mangle: false,
                   output: {

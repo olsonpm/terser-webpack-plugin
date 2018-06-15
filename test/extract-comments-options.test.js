@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import { PluginEnvironment } from './helpers';
 
 describe('when options.extractComments', () => {
@@ -7,8 +7,8 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
-      uglifyOptions: {
+    const plugin = new TerserPlugin({
+      terserOptions: {
         warnings: true,
         mangle: {
           properties: {
@@ -58,8 +58,8 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
-      uglifyOptions: {
+    const plugin = new TerserPlugin({
+      terserOptions: {
         warnings: true,
         mangle: {
           properties: {
@@ -111,7 +111,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin();
+    const plugin = new TerserPlugin();
     plugin.apply(compilerEnv);
     const [eventBinding] = pluginEnvironment.getEventBindings();
     const chunkPluginEnvironment = new PluginEnvironment();
@@ -148,7 +148,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: true,
     });
     plugin.apply(compilerEnv);
@@ -187,7 +187,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: /foo/,
     });
     plugin.apply(compilerEnv);
@@ -226,7 +226,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: 'all',
     });
     plugin.apply(compilerEnv);
@@ -265,7 +265,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: () => true,
     });
     plugin.apply(compilerEnv);
@@ -304,7 +304,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: {
         condition: true,
         filename(file) {
@@ -348,7 +348,7 @@ describe('when options.extractComments', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin({
+    const plugin = new TerserPlugin({
       extractComments: 'all',
     });
     plugin.apply(compilerEnv);

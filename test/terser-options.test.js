@@ -1,11 +1,11 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
   compile,
 } from './helpers';
 
-describe('when applied with uglify-es options', () => {
+describe('when applied with terser options', () => {
   it('matches snapshot for `toplevel` option', () => {
     const compiler = createCompiler({
       entry: `${__dirname}/fixtures/import-export/entry.js`,
@@ -16,8 +16,8 @@ describe('when applied with uglify-es options', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         toplevel: true,
         mangle: false,
         warnings: true,
@@ -52,8 +52,8 @@ describe('when applied with uglify-es options', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         nameCache: {},
         mangle: false,
         warnings: true,
@@ -88,8 +88,8 @@ describe('when applied with uglify-es options', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         keep_classnames: true,
         mangle: false,
         warnings: true,
@@ -124,8 +124,8 @@ describe('when applied with uglify-es options', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         keep_fnames: true,
         mangle: false,
         warnings: true,
@@ -160,8 +160,8 @@ describe('when applied with uglify-es options', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         safari10: true,
         mangle: false,
         warnings: true,

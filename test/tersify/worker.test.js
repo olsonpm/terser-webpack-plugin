@@ -1,5 +1,5 @@
 import serialize from 'serialize-javascript';
-import worker from '../../src/uglify/worker';
+import worker from '../../src/tersify/worker';
 
 describe('matches snapshot', () => {
   it('normalizes when options.extractComments is regex', () => {
@@ -16,11 +16,11 @@ describe('matches snapshot', () => {
     });
   });
 
-  it('normalizes when uglifyOptions.output.comments is string: all', () => {
+  it('normalizes when terserOptions.output.comments is string: all', () => {
     const options = {
       file: 'test2.js',
       input: 'var foo = 1;/* hello */',
-      uglifyOptions: {
+      terserOptions: {
         output: {
           comments: 'all',
         },
@@ -34,11 +34,11 @@ describe('matches snapshot', () => {
     });
   });
 
-  it('normalizes when uglifyOptions.output.comments is string: some', () => {
+  it('normalizes when terserOptions.output.comments is string: some', () => {
     const options = {
       file: 'test3.js',
       input: 'var foo = 1;/* hello */',
-      uglifyOptions: {
+      terserOptions: {
         output: {
           comments: 'some',
         },
@@ -52,11 +52,11 @@ describe('matches snapshot', () => {
     });
   });
 
-  it('normalizes when uglifyOptions.extractComments is number', () => {
+  it('normalizes when terserOptions.extractComments is number', () => {
     const options = {
       file: 'test4.js',
       input: 'var foo = 1;/* hello */',
-      uglifyOptions: {
+      terserOptions: {
         output: {
           comments: 'some',
         },
@@ -75,7 +75,7 @@ describe('matches snapshot', () => {
     const options = {
       file: 'test5.js',
       input: '/******/ function hello(a) {console.log(a)}',
-      uglifyOptions: {
+      terserOptions: {
         output: {
           comments: 'all',
         },

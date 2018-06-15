@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJSPlugin = require('../');
+const TerserPlugin = require('../');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -17,7 +17,7 @@ module.exports = [
       filename: '[name].js',
     },
     plugins: [
-      new UglifyJSPlugin(),
+      new TerserPlugin(),
     ],
   },
   {
@@ -30,7 +30,7 @@ module.exports = [
       filename: '[name].js',
     },
     plugins: [
-      new UglifyJSPlugin(),
+      new TerserPlugin(),
     ],
   },
 ];

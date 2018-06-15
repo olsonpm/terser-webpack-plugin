@@ -1,6 +1,6 @@
 import MultiCompiler from 'webpack/lib/MultiCompiler';
 import MultiStats from 'webpack/lib/MultiStats';
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
@@ -30,7 +30,7 @@ describe('when using MultiCompiler with empty options', () => {
           filename: '[name].[chunkhash].js',
           chunkFilename: '[id].[name].[chunkhash].js',
         },
-        plugins: [new UglifyJsPlugin()],
+        plugins: [new TerserPlugin()],
       },
       {
         bail: true,
@@ -41,7 +41,7 @@ describe('when using MultiCompiler with empty options', () => {
           filename: '[name].[chunkhash].js',
           chunkFilename: '[id].[name].[chunkhash].js',
         },
-        plugins: [new UglifyJsPlugin()],
+        plugins: [new TerserPlugin()],
       },
     ]);
 

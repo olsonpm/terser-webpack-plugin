@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
@@ -18,7 +18,7 @@ describe('when applied with include option', () => {
   });
 
   it('matches snapshot for a single include', () => {
-    new UglifyJsPlugin({
+    new TerserPlugin({
       include: /included1/,
     }).apply(compiler);
 
@@ -39,7 +39,7 @@ describe('when applied with include option', () => {
   });
 
   it('matches snapshot for multiple includes', () => {
-    new UglifyJsPlugin({
+    new TerserPlugin({
       include: [
         /included1/,
         /included2/,

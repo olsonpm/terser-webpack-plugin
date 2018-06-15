@@ -1,6 +1,6 @@
 import cacache from 'cacache';
 import findCacheDir from 'find-cache-dir';
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   createCompiler,
@@ -8,7 +8,7 @@ import {
   cleanErrorStack,
 } from './helpers';
 
-const cacheDir = findCacheDir({ name: 'uglifyjs-webpack-plugin' });
+const cacheDir = findCacheDir({ name: 'terser-webpack-plugin' });
 
 describe('when options.cache', () => {
   const assets = {
@@ -39,7 +39,7 @@ describe('when options.cache', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         cache: false,
       });
       plugin.apply(compilerEnv);
@@ -127,7 +127,7 @@ describe('when options.cache', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ cache: true }).apply(compiler);
+      new TerserPlugin({ cache: true }).apply(compiler);
 
       return compile(compiler)
         .then((stats) => {
@@ -159,7 +159,7 @@ describe('when options.cache', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         cache: true,
       });
       plugin.apply(compilerEnv);
@@ -272,7 +272,7 @@ describe('when options.cache', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ cache: true }).apply(compiler);
+      new TerserPlugin({ cache: true }).apply(compiler);
 
       return compile(compiler)
         .then((stats) => {
@@ -305,7 +305,7 @@ describe('when options.cache', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         cache: othercacheDir,
       });
       plugin.apply(compilerEnv);
@@ -418,7 +418,7 @@ describe('when options.cache', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ cache: othercacheDir }).apply(compiler);
+      new TerserPlugin({ cache: othercacheDir }).apply(compiler);
 
       return compile(compiler)
         .then((stats) => {

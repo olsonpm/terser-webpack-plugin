@@ -1,6 +1,6 @@
 import os from 'os';
 import workerFarm from 'worker-farm';
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   createCompiler,
@@ -48,7 +48,7 @@ describe('when options.parallel', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         parallel: false,
       });
       plugin.apply(compilerEnv);
@@ -126,7 +126,7 @@ describe('when options.parallel', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ parallel: false }).apply(compiler);
+      new TerserPlugin({ parallel: false }).apply(compiler);
 
       return compile(compiler).then((stats) => {
         const errors = stats.compilation.errors.map(cleanErrorStack);
@@ -153,7 +153,7 @@ describe('when options.parallel', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         parallel: true,
       });
       plugin.apply(compilerEnv);
@@ -234,7 +234,7 @@ describe('when options.parallel', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ parallel: true }).apply(compiler);
+      new TerserPlugin({ parallel: true }).apply(compiler);
 
       return compile(compiler).then((stats) => {
         const errors = stats.compilation.errors.map(cleanErrorStack);
@@ -261,7 +261,7 @@ describe('when options.parallel', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         parallel: 2,
       });
       plugin.apply(compilerEnv);
@@ -344,7 +344,7 @@ describe('when options.parallel', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ parallel: true }).apply(compiler);
+      new TerserPlugin({ parallel: true }).apply(compiler);
 
       return compile(compiler).then((stats) => {
         const errors = stats.compilation.errors.map(cleanErrorStack);

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_classnames\` option: errors 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `keep_classnames` option: errors 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_classnames\` option: main.js 1`] = `
+exports['when applied with terser options matches snapshot for `keep_classnames` option: main.js 1'] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -23,11 +23,11 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_classna
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_classnames\` option: manifest.js 1`] = `
+exports['when applied with terser options matches snapshot for `keep_classnames` option: manifest.js 1'] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -44,7 +44,7 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_classna
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -68,11 +68,11 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_classna
 }([]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_classnames\` option: warnings 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `keep_classnames` option: warnings 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\` option: errors 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `keep_fnames` option: errors 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\` option: main.js 1`] = `
+exports['when applied with terser options matches snapshot for `keep_fnames` option: main.js 1'] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -93,11 +93,11 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\` option: manifest.js 1`] = `
+exports['when applied with terser options matches snapshot for `keep_fnames` option: manifest.js 1'] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -114,7 +114,7 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -138,11 +138,11 @@ exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\
 }([]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`keep_fnames\` option: warnings 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `keep_fnames` option: warnings 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`nameCache\` option: errors 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `nameCache` option: errors 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`nameCache\` option: main.js 1`] = `
+exports['when applied with terser options matches snapshot for `nameCache` option: main.js 1'] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -163,11 +163,11 @@ exports[`when applied with uglify-es options matches snapshot for \`nameCache\` 
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`nameCache\` option: manifest.js 1`] = `
+exports['when applied with terser options matches snapshot for `nameCache` option: manifest.js 1'] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -184,7 +184,7 @@ exports[`when applied with uglify-es options matches snapshot for \`nameCache\` 
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -208,11 +208,11 @@ exports[`when applied with uglify-es options matches snapshot for \`nameCache\` 
 }([]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`nameCache\` option: warnings 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `nameCache` option: warnings 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`safari10\` option: errors 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `safari10` option: errors 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`safari10\` option: main.js 1`] = `
+exports['when applied with terser options matches snapshot for `safari10` option: main.js 1'] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -233,11 +233,11 @@ exports[`when applied with uglify-es options matches snapshot for \`safari10\` o
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`safari10\` option: manifest.js 1`] = `
+exports['when applied with terser options matches snapshot for `safari10` option: manifest.js 1'] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -254,7 +254,7 @@ exports[`when applied with uglify-es options matches snapshot for \`safari10\` o
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -278,11 +278,11 @@ exports[`when applied with uglify-es options matches snapshot for \`safari10\` o
 }([]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`safari10\` option: warnings 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `safari10` option: warnings 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`toplevel\` option: errors 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `toplevel` option: errors 1'] = 'Array []';
 
-exports[`when applied with uglify-es options matches snapshot for \`toplevel\` option: main.js 1`] = `
+exports['when applied with terser options matches snapshot for `toplevel` option: main.js 1'] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -303,11 +303,11 @@ exports[`when applied with uglify-es options matches snapshot for \`toplevel\` o
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`toplevel\` option: manifest.js 1`] = `
+exports['when applied with terser options matches snapshot for `toplevel` option: manifest.js 1'] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -324,7 +324,7 @@ exports[`when applied with uglify-es options matches snapshot for \`toplevel\` o
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -348,4 +348,4 @@ exports[`when applied with uglify-es options matches snapshot for \`toplevel\` o
 }([]);"
 `;
 
-exports[`when applied with uglify-es options matches snapshot for \`toplevel\` option: warnings 1`] = `Array []`;
+exports['when applied with terser options matches snapshot for `toplevel` option: warnings 1'] = 'Array []';

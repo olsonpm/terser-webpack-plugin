@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   createCompiler,
@@ -40,7 +40,7 @@ describe('when options.sourceMap', () => {
       compilerEnv.context = '';
       compilerEnv.devtool = 'source-map';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         sourceMap: true,
       });
       plugin.apply(compilerEnv);
@@ -131,7 +131,7 @@ describe('when options.sourceMap', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ sourceMap: true }).apply(compiler);
+      new TerserPlugin({ sourceMap: true }).apply(compiler);
 
       return compile(compiler).then((stats) => {
         const errors = stats.compilation.errors.map(cleanErrorStack);
@@ -163,7 +163,7 @@ describe('when options.sourceMap', () => {
       const compilerEnv = pluginEnvironment.getEnvironmentStub();
       compilerEnv.context = '';
 
-      const plugin = new UglifyJsPlugin({
+      const plugin = new TerserPlugin({
         parallel: true,
         sourceMap: true,
       });
@@ -255,7 +255,7 @@ describe('when options.sourceMap', () => {
 
     it('matches snapshot', () => {
       const compiler = createCompiler();
-      new UglifyJsPlugin({ parallel: true, sourceMap: true }).apply(compiler);
+      new TerserPlugin({ parallel: true, sourceMap: true }).apply(compiler);
 
       return compile(compiler).then((stats) => {
         const errors = stats.compilation.errors.map(cleanErrorStack);

@@ -1,4 +1,4 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
@@ -18,7 +18,7 @@ describe('when applied with exclude option', () => {
   });
 
   it('matches snapshot for a single exclude', () => {
-    new UglifyJsPlugin({
+    new TerserPlugin({
       exclude: /excluded1/,
     }).apply(compiler);
 
@@ -39,7 +39,7 @@ describe('when applied with exclude option', () => {
   });
 
   it('matches snapshot for multiple excludes', () => {
-    new UglifyJsPlugin({
+    new TerserPlugin({
       exclude: [
         /excluded1/,
         /excluded2/,

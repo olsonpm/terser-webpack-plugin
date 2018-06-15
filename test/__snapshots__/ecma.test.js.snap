@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: errors 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: errors 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: main.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: main.js 1`] = `
 "webpackJsonp([ 0 ], [ function(module, exports) {
     var Person = {
         firstName: null,
@@ -30,11 +30,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: main.
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: manifest.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: manifest.js 1`] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -51,7 +51,7 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -75,11 +75,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: manif
 }([]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 5: warnings 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: warnings 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: errors 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: errors 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: main.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: main.js 1`] = `
 "webpackJsonp([ 0 ], [ function(module, exports) {
     module.exports = class {
         constructor(principal, years, rate) {
@@ -109,11 +109,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: main.
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: manifest.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: manifest.js 1`] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -130,7 +130,7 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -154,11 +154,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: manif
 }([]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 6: warnings 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: warnings 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: errors 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: errors 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: main.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: main.js 1`] = `
 "webpackJsonp([ 0 ], [ function(module, exports) {
     module.exports = function(base, exponent) {
         return base ** exponent;
@@ -166,11 +166,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: main.
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: manifest.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: manifest.js 1`] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -187,7 +187,7 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -211,11 +211,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: manif
 }([]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 7: warnings 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: warnings 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: errors 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: errors 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: main.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: main.js 1`] = `
 "webpackJsonp([ 0 ], [ function(module, exports) {
     module.exports = async function(url) {
         try {
@@ -228,11 +228,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: main.
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: manifest.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: manifest.js 1`] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -249,7 +249,7 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -273,11 +273,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: manif
 }([]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for ecma 8: warnings 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: warnings 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for import and export: errors 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for import and export: errors 1`] = `Array []`;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for import and export: main.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for import and export: main.js 1`] = `
 "webpackJsonp([ 0 ], [ function(module, __webpack_exports__, __webpack_require__) {
     \\"use strict\\";
     Object.defineProperty(__webpack_exports__, \\"__esModule\\", {
@@ -298,11 +298,11 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for import and ex
 } ], [ 0 ]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for import and export: manifest.js 1`] = `
+exports[`when applied with terserOptions.ecma matches snapshot for import and export: manifest.js 1`] = `
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -319,7 +319,7 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for import and ex
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -343,4 +343,4 @@ exports[`when applied with uglifyOptions.ecma matches snapshot for import and ex
 }([]);"
 `;
 
-exports[`when applied with uglifyOptions.ecma matches snapshot for import and export: warnings 1`] = `Array []`;
+exports[`when applied with terserOptions.ecma matches snapshot for import and export: warnings 1`] = `Array []`;

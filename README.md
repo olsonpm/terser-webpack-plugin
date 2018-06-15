@@ -1,37 +1,33 @@
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![deps][deps]][deps-url]
-[![test][test]][test-url]
-[![coverage][cover]][cover-url]
-[![chat][chat]][chat-url]
+## This plugin is under development.
 
+I'm using it for a personal project and don't have time to maintain this plugin.
+I recommend forking this repo if you plan on using it.
+<br>
 
 <div align="center">
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200"
       src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon.svg">
   </a>
-  <h1>UglifyJS Webpack Plugin</h1>
-	<p>This plugin uses <a href="https://github.com/mishoo/UglifyJS2/tree/harmony">UglifyJS v3 </a><a href="https://npmjs.com/package/uglify-es">(`uglify-es`)</a> to minify your JavaScript</p>
+  <h1>Terser Webpack Plugin</h1>
+	<p>This plugin uses <a href="https://github.com/fabiosantoscode/terser">terser</a> to minify your JavaScript</p>
 </div>
-
-> ℹ️  `webpack < v4.0.0` currently contains [`v0.4.6`](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/tree/version-0.4) of this plugin under `webpack.optimize.UglifyJsPlugin` as an alias. For usage of the latest version (`v1.0.0`), please follow the instructions below. Aliasing `v1.0.0` as `webpack.optimize.UglifyJsPlugin` is scheduled for `webpack v4.0.0`
 
 <h2 align="center">Install</h2>
 
 ```bash
-npm i -D uglifyjs-webpack-plugin
+npm i -D olsonpm/terser-webpack-plugin
 ```
 
 <h2 align="center">Usage</h2>
 
 **webpack.config.js**
 ```js
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   plugins: [
-    new UglifyJsPlugin()
+    new TerserPlugin()
   ]
 }
 ```
@@ -46,16 +42,16 @@ module.exports = {
 |**`cache`**|`{Boolean\|String}`|`false`|Enable file caching|
 |**`parallel`**|`{Boolean\|Number}`|`false`|Use multi-process parallel running to improve the build speed|
 |**`sourceMap`**|`{Boolean}`|`false`|Use source maps to map error message locations to modules (This slows down the compilation) ⚠️ **`cheap-source-map` options don't work with this plugin**|
-|**`uglifyOptions`**|`{Object}`|[`{...defaults}`](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/tree/master#uglifyoptions)|`uglify` [Options](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options)|
+|**`terserOptions`**|`{Object}`|[`{...defaults}`](https://github.com/olsonpm/terser-webpack-plugin/tree/master#terseroptions)|`terser` [Options](https://github.com/fabiosantoscode/terser#minify-options)|
 |**`extractComments`**|`{Boolean\|RegExp\|Function<(node, comment) -> {Boolean\|Object}>}`|`false`|Whether comments shall be extracted to a separate file, (see [details](https://github.com/webpack/webpack/commit/71933e979e51c533b432658d5e37917f9e71595a) (`webpack >= 2.3.0`)|
-|**`warningsFilter`**|`{Function(source) -> {Boolean}}`|`() => true`|Allow to filter uglify warnings|
+|**`warningsFilter`**|`{Function(source) -> {Boolean}}`|`() => true`|Allow to filter terser warnings|
 
 ### `test`
 
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     test: /\.js($|\?)/i
   })
 ]
@@ -66,7 +62,7 @@ module.exports = {
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     include: /\/includes/
   })
 ]
@@ -77,7 +73,7 @@ module.exports = {
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     exclude: /\/excludes/
   })
 ]
@@ -90,21 +86,21 @@ module.exports = {
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     cache: true
   })
 ]
 ```
 
 Enable file caching.
-Default path to cache directory: `node_modules/.cache/uglifyjs-webpack-plugin`.
+Default path to cache directory: `node_modules/.cache/terser-webpack-plugin`.
 
 #### `{String}`
 
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     cache: 'path/to/cache'
   })
 ]
@@ -119,7 +115,7 @@ Path to cache directory.
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     parallel: true
   })
 ]
@@ -133,7 +129,7 @@ Default number of concurrent runs: `os.cpus().length - 1`.
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     parallel: 4
   })
 ]
@@ -148,7 +144,7 @@ Number of concurrent runs.
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     sourceMap: true
   })
 ]
@@ -156,16 +152,16 @@ Number of concurrent runs.
 
 > ⚠️ **`cheap-source-map` options don't work with this plugin**
 
-### [`uglifyOptions`](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options)
+### [`terserOptions`](https://github.com/fabiosantoscode/terser#minify-options)
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`ecma`**|`{Number}`|`undefined`|Supported ECMAScript Version (`5`, `6`, `7` or `8`). Affects `parse`, `compress` && `output` options|
 |**`warnings`**|`{Boolean}`|`false`|Display Warnings|
-|**[`parse`](https://github.com/mishoo/UglifyJS2/tree/harmony#parse-options)**|`{Object}`|`{}`|Additional Parse Options|
-|**[`compress`](https://github.com/mishoo/UglifyJS2/tree/harmony#compress-options)**|`{Boolean\|Object}`|`true`|Additional Compress Options|
-|**[`mangle`](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-options)**|`{Boolean\|Object}`|`true`|Enable Name Mangling (See [Mangle Properties](https://github.com/mishoo/UglifyJS2/tree/harmony#mangle-properties-options) for advanced setups, use with ⚠️)|
-|**[`output`](https://github.com/mishoo/UglifyJS2/tree/harmony#output-options)**|`{Object}`|`{}`|Additional Output Options (The defaults are optimized for best compression)|
+|**[`parse`](https://github.com/fabiosantoscode/terser#parse-options)**|`{Object}`|`{}`|Additional Parse Options|
+|**[`compress`](https://github.com/fabiosantoscode/terser#compress-options)**|`{Boolean\|Object}`|`true`|Additional Compress Options|
+|**[`mangle`](https://github.com/fabiosantoscode/terser#mangle-options)**|`{Boolean\|Object}`|`true`|Enable Name Mangling (See [Mangle Properties](https://github.com/fabiosantoscode/terser#mangle-properties-options) for advanced setups, use with ⚠️)|
+|**[`output`](https://github.com/fabiosantoscode/terser#output-options)**|`{Object}`|`{}`|Additional Output Options (The defaults are optimized for best compression)|
 |**`toplevel`**|`{Boolean}`|`false`|Enable top level variable and function name mangling and to drop unused variables and functions|
 |**`nameCache`**|`{Object}`|`null`|Enable cache of mangled variable and property names across multiple invocations|
 |**`ie8`**|`{Boolean}`|`false`|Enable IE8 Support|
@@ -176,8 +172,8 @@ Number of concurrent runs.
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
-    uglifyOptions: {
+  new TerserPlugin({
+    terserOptions: {
       ecma: 8,
       warnings: false,
       parse: {...options},
@@ -227,7 +223,7 @@ All comments that match the given expression (resp. are evaluated to `true` by t
 **webpack.config.js**
 ```js
 [
-  new UglifyJsPlugin({
+  new TerserPlugin({
     warningsFilter: (src) => true
   })
 ]
@@ -276,22 +272,3 @@ All comments that match the given expression (resp. are evaluated to `true` by t
     </tr>
   <tbody>
 </table>
-
-
-[npm]: https://img.shields.io/npm/v/uglifyjs-webpack-plugin.svg
-[npm-url]: https://npmjs.com/package/uglifyjs-webpack-plugin
-
-[node]: https://img.shields.io/node/v/uglifyjs-webpack-plugin.svg
-[node-url]: https://nodejs.org
-
-[deps]: https://david-dm.org/webpack-contrib/uglifyjs-webpack-plugin.svg
-[deps-url]: https://david-dm.org/webpack-contrib/uglifyjs-webpack-plugin
-
-[test]: 	https://img.shields.io/circleci/project/github/webpack-contrib/uglifyjs-webpack-plugin.svg
-[test-url]: https://circleci.com/gh/webpack-contrib/uglifyjs-webpack-plugin
-
-[cover]: https://codecov.io/gh/webpack-contrib/uglifyjs-webpack-plugin/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/webpack-contrib/uglifyjs-webpack-plugin
-
-[chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg
-[chat-url]: https://gitter.im/webpack/webpack

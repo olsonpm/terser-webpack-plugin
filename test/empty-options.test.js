@@ -1,5 +1,5 @@
 import { RawSource } from 'webpack-sources';
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   PluginEnvironment,
   cleanErrorStack,
@@ -16,14 +16,14 @@ describe('when applied with no options', () => {
     const compilerEnv = pluginEnvironment.getEnvironmentStub();
     compilerEnv.context = '';
 
-    const plugin = new UglifyJsPlugin();
+    const plugin = new TerserPlugin();
     plugin.apply(compilerEnv);
     eventBindings = pluginEnvironment.getEventBindings();
   });
 
   it('matches snapshot', () => {
     const compiler = createCompiler();
-    new UglifyJsPlugin().apply(compiler);
+    new TerserPlugin().apply(compiler);
 
 
     return compile(compiler).then((stats) => {

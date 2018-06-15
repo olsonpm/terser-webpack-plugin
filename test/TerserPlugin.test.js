@@ -1,7 +1,7 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 
-describe('UglifyJsPlugin', () => {
+describe('TerserPlugin', () => {
   it('has apply function', () => {
-    expect(typeof new UglifyJsPlugin().apply).toBe('function');
+    expect(typeof new TerserPlugin().apply).toBe('function');
   });
 });

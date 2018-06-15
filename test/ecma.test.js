@@ -1,11 +1,11 @@
-import UglifyJsPlugin from '../src/index';
+import TerserPlugin from '../src/index';
 import {
   cleanErrorStack,
   createCompiler,
   compile,
 } from './helpers';
 
-describe('when applied with uglifyOptions.ecma', () => {
+describe('when applied with terserOptions.ecma', () => {
   it('matches snapshot for import and export', () => {
     const compiler = createCompiler({
       entry: `${__dirname}/fixtures/import-export/entry.js`,
@@ -16,8 +16,8 @@ describe('when applied with uglifyOptions.ecma', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         ecma: 5,
         mangle: false,
         warnings: true,
@@ -52,8 +52,8 @@ describe('when applied with uglifyOptions.ecma', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         ecma: 5,
         mangle: false,
         warnings: true,
@@ -88,8 +88,8 @@ describe('when applied with uglifyOptions.ecma', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         ecma: 6,
         mangle: false,
         warnings: true,
@@ -123,8 +123,8 @@ describe('when applied with uglifyOptions.ecma', () => {
         chunkFilename: '[id].[name].js',
       },
     });
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         ecma: 7,
         mangle: false,
         warnings: true,
@@ -159,8 +159,8 @@ describe('when applied with uglifyOptions.ecma', () => {
       },
     });
 
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         ecma: 8,
         mangle: false,
         warnings: true,

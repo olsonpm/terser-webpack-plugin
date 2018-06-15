@@ -1,9 +1,9 @@
-const UglifyJSPlugin = require('../src');
+const TerserPlugin = require('../src');
 
 exports.minifyJS = function minifyJS(options) {
   return {
     plugins: [
-      new UglifyJSPlugin(options),
+      new TerserPlugin(options),
     ],
   };
 };
