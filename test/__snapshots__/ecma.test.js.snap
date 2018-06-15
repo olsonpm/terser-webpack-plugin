@@ -34,7 +34,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: manif
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -51,7 +51,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 5: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -113,7 +113,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: manif
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -130,7 +130,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 6: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -170,7 +170,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: manif
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -187,7 +187,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 7: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -232,7 +232,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: manif
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -249,7 +249,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for ecma 8: manif
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
@@ -302,7 +302,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for import and ex
 "!function(modules) {
     var parentJsonpFunction = window.webpackJsonp;
     window.webpackJsonp = function(chunkIds, moreModules, executeModules) {
-        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i],
+        for (var moduleId, chunkId, result, i = 0, resolves = []; i < chunkIds.length; i++) chunkId = chunkIds[i], 
         installedChunks[chunkId] && resolves.push(installedChunks[chunkId][0]), installedChunks[chunkId] = 0;
         for (moduleId in moreModules) Object.prototype.hasOwnProperty.call(moreModules, moduleId) && (modules[moduleId] = moreModules[moduleId]);
         for (parentJsonpFunction && parentJsonpFunction(chunkIds, moreModules, executeModules); resolves.length; ) resolves.shift()();
@@ -319,7 +319,7 @@ exports[`when applied with terserOptions.ecma matches snapshot for import and ex
             l: !1,
             exports: {}
         };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__),
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
         module.l = !0, module.exports;
     }
     __webpack_require__.m = modules, __webpack_require__.c = installedModules, __webpack_require__.d = function(exports, name, getter) {
