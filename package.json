@@ -1,6 +1,6 @@
 {
   "name": "terser-webpack-plugin",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "terser plugin for webpack",
   "author": "phil olson",
   "license": "MIT",
@@ -8,28 +8,6 @@
     "node": ">= 4.8 < 5.0.0 || >= 5.10"
   },
   "main": "dist/cjs.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "start": "npm run build -- -w",
-    "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
-    "prebuild": "npm run clean",
-    "clean": "del-cli dist",
-    "lint": "eslint --cache src test",
-    "lint-staged": "lint-staged",
-    "prepare": "npm run build",
-    "release": "standard-version",
-    "security": "nsp check",
-    "ci:lint": "npm run lint && npm run security",
-    "ci:test": "npm run test -- --runInBand",
-    "ci:coverage": "npm run test:coverage -- --runInBand",
-    "appveyor:test": "npm run test",
-    "webpack-defaults": "webpack-defaults"
-  },
   "dependencies": {
     "cacache": "^10.0.4",
     "find-cache-dir": "^1.0.0",
@@ -55,7 +33,6 @@
     "lint-staged": "^6.0.0",
     "memory-fs": "^0.4.1",
     "nsp": "^3.1.0",
-    "pre-commit": "^1.2.2",
     "standard-version": "^4.3.0",
     "webpack": "^3.10.0",
     "webpack-defaults": "^1.6.0"
@@ -74,14 +51,7 @@
   "bugs": "https://github.com/olsonpm/terser-webpack-plugin/issues",
   "homepage": "https://github.com/olsonpm/terser-webpack-plugin",
   "repository": "https://github.com/olsonpm/terser-webpack-plugin.git",
-  "pre-commit": "lint-staged",
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "jest": {
-    "testEnvironment": "node"
+  "scripts": {
+    "webpack-defaults": "webpack-defaults"
   }
 }
